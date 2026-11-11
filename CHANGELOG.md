@@ -11,12 +11,20 @@ and the project uses [Semantic Versioning](https://semver.org/).
 - Interactive Marimo notebook, multi-raster analysis, and feet/meters unit conversion.
 - DuckDB-based flood analysis pipeline with updated damage function methodology.
 - `CITATION.cff`, `CHANGELOG.md`, Dependabot, CodeQL, and CODEOWNERS.
+- `sphere run JOB.json` command and versioned job/result contract
+  (`docs/job-contract.md`) so other programs, such as an ArcGIS Pro toolbox,
+  can run SPHERE as a separate process. Results match the Marimo notebook
+  exactly; also writes per-raster losses and a `result.json` manifest.
 
 ### Changed
 - All packages now share one version (next release: 0.3.0) and pin each other
   exactly (`sphere-core==0.3.0`), so installs always get a tested-together set.
 - Releases publish to PyPI via Trusted Publishing (OIDC) instead of API tokens.
 - Expanded `SECURITY.md`, `CODE_OF_CONDUCT.md`, and `CONTRIBUTING.md`.
+
+### Fixed
+- The `sphere` and `sphere-flood` commands pointed at a `main()` that did not
+  exist and failed with `ImportError`; they now run the new job command.
 
 ## [0.2.0] - 2025-09-22
 

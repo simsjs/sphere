@@ -19,7 +19,7 @@ Issues = "https://github.com/Niyam-Projects/sphere/issues"
 Changelog = "https://github.com/Niyam-Projects/sphere/blob/main/CHANGELOG.md"
 
 [project.scripts]
-sphere = "sphere:main"
+sphere = "sphere.flood.cli:main"
 
 [tool.uv.workspace]
 members = [
